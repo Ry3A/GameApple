@@ -158,7 +158,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Apple.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameMain.cpp" />
+    <ClCompile Include="Math.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Stone.cpp" />
+    <ClCompile Include="Text.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Apple.h" />
+    <ClInclude Include="Constans.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Math.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Stone.h" />
+    <ClInclude Include="Text.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

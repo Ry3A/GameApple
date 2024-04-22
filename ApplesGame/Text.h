@@ -1,10 +1,8 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 
-namespace ApplesGame
-{
-	struct TextState
-	{
+namespace ApplesGame {
+	struct TextState {
 		bool isGameOverTextVisible = false;
 
 		sf::Text scoreText;

@@ -1,42 +1,53 @@
 #pragma once
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
+#include "SFML/Graphics.hpp"
+#include "SFML/Audio.hpp"
+#include "Constants.h"
 #include "Math.h"
-#include "Constans.h"
 #include "Player.h"
 #include "Apple.h"
-#include "Stone.h"
+#include "Rock.h"
 #include "Text.h"
 
 namespace ApplesGame {
-
 	struct Game {
+		Rectangle screenRect;
+
 		Player player;
 		Apple apples[NUM_APPLES];
-		Stone stones[NUM_STONES];
+		Rock rocks[NUM_ROCKS];
 
-		// glodal game data
+		// Global game data
 		int numEatenApples = 0;
-		//int scoreApples = 0;
 		bool isGameFinished = false;
 		float timeSinceGameFinish = 0.f;
-		sf::RectangleShape background;
-		TextState textState;
-		sf::Sound sound;
-		sf::Font font;
 
-
-		// resources
+		// Resources
 		sf::Texture playerTexture;
 		sf::Texture appleTexture;
-		sf::Texture stoneTexture;
-		sf::SoundBuffer eatingSound;
-		sf::SoundBuffer dieSound;
+		sf::Texture rockTexture;
+		sf::SoundBuffer eatAppleSoundBuffer;
+		sf::SoundBuffer gameOverSoundBuffer;
+
+		// Game objects
+		sf::Sound eatAppleSound;
+		sf::Sound gameOverSound;
+		sf::RectangleShape background;
+
+		// Texts and fonts
+		TextState textState;
+		sf::Font font;
 	};
 
-	void RestartGame(Game& game);
 	void InitGame(Game& game);
 	void UpdateGame(Game& game, float deltaTime);
 	void DrawGame(Game& game, sf::RenderWindow& window);
-	void DeinitializeGame(Game& game);
+	void DeinializeGame(Game& game);
+
+	void StartPlayingState(Game& game);
+	void UpdatePlayingState(Game& game, float deltaTime);
+
+	void StartGameoverState(Game& game);
+	void UpdateGameoverState(Game& game, float deltaTime);
 }
+
+

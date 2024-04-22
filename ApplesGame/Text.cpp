@@ -2,14 +2,12 @@
 #include "Game.h"
 #include <string>
 
-namespace ApplesGame
-{
-	void InitText(TextState& textState, const sf::Font& font)
-	{
+namespace ApplesGame {
+	void InitText(TextState& textState, const sf::Font& font) {
 		textState.scoreText.setFont(font);
 		textState.scoreText.setCharacterSize(24);
 		textState.scoreText.setFillColor(sf::Color::Yellow);
-	
+
 
 		textState.inputHintText.setFont(font);
 		textState.inputHintText.setCharacterSize(24);
@@ -26,8 +24,7 @@ namespace ApplesGame
 		textState.gameOverText.setOrigin(GetTextOrigin(textState.gameOverText, { 0.5f, 0.5f }));
 	}
 
-	void UpdateText(TextState& textState, const struct Game& game, float timeDelta)
-	{
+	void UpdateText(TextState& textState, const struct Game& game, float timeDelta) {
 		textState.scoreText.setString("Apples eaten: " + std::to_string(game.numEatenApples));
 
 		textState.isGameOverTextVisible = game.isGameFinished;
@@ -35,8 +32,7 @@ namespace ApplesGame
 		textState.gameOverText.setFillColor(gameOverTextColor);
 	}
 
-	void DrawText(TextState& textState, sf::RenderWindow& window)
-	{
+	void DrawText(TextState& textState, sf::RenderWindow& window) {
 		textState.scoreText.setPosition(10.f, 10.f);
 		window.draw(textState.scoreText);
 
@@ -49,6 +45,5 @@ namespace ApplesGame
 			window.draw(textState.gameOverText);
 		}
 	}
-
 }
 

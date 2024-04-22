@@ -22,7 +22,7 @@
     <ClCompile Include="Apple.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="Stone.cpp">
+    <ClCompile Include="Rock.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="Text.cpp">
@@ -36,10 +36,10 @@
     <ClInclude Include="Math.h">
       <Filter>Sources</Filter>
     </ClInclude>
-    <ClInclude Include="Constans.h">
+    <ClInclude Include="Constants.h">
       <Filter>Sources</Filter>
     </ClInclude>
-    <ClInclude Include="Stone.h">
+    <ClInclude Include="Rock.h">
       <Filter>Sources</Filter>
     </ClInclude>
     <ClInclude Include="Apple.h">
